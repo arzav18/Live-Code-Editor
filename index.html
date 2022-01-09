@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title> Live Code Editor</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="welcome">
+        <h1><b>WELCOME TO LIVE CODE EDITOR!</b></h1>
+        </div>
+
+        <div class="code-area">
+            <textarea id="htmlCode" placeholder="HTML Code"
+            oninput="showPreview()"></textarea>
+            <textarea id="cssCode" placeholder="CSS Code"
+            oninput="showPreview()"></textarea>
+            <textarea id="jsCode" placeholder="JavaScript Code"
+            oninput="showPreview()"></textarea>
+            
+        </div>
+        <div class="preview-area">
+            <iframe id="preview-window"></iframe>
+         </div>
+         <script type="text/javascript">
+        function showPreview(){
+            var htmlCode = document.getElementById("htmlCode").value;
+            var cssCode  = "<style>"+ document.getElementById("cssCode").value + "</style";
+            var jsCode   = "<scri"+"pt>" + document.getElementById("jsCode").value + "</scri"+"pt>";
+            var frame    = document.getElementById("preview-window").contentWindow.document;
+            frame.open();
+            frame.write(htmlCode + cssCode + jsCode);
+            frame.close();
+        }
+        </script>
+
+    <div class="container">
+    <h2><u>How to use?</u></h2>
+    
+      <img src="Image .jpg" alt="An example of how to use the editor" width="500" height="500" class="image">
+      <div class="overlay">
+        <div class="text">An Example</div>
+      </div>
+    </div>
+    
+        
+        
+        <footer>
+             
+            <p><u>DESIGNED BY</u>: Arzav Jain & Vidushi Rajput</p>
+            <p><u>CONTACT</u>: 8447457030, 9034115440</p>
+            <P><u>MAIL</u>: arzav.jain@gmail.com, vidushirajput11@gmail.com</P>
+        </footer>
+
+    </body>
+</html>
